@@ -1,0 +1,66 @@
+conda create -n graphnetwork python=3.7
+conda activate graphnetwork
+conda info --envs
+
+
+# commands to create virtual environment - 
+conda create -n minilm python=3.7
+bash
+conda activate minilm
+pip install -r requirements.txt
+ipython kernel install --user --name=minilm
+
+
+
+
+# useful commands: 
+conda activate graphnetwork
+conda info --envs
+
+## To Delete a Kernel in jupyter
+        ## List Installed Kernels:
+        jupyter-kernelspec list    #[Command]
+        Look for the hotw-anaconda3-bin-pip kernel in the list.
+        
+        ## Remove the Kernel - Once you identify the kernel you want to remove, use the following command to remove it, Replace hotw-anaconda3-bin-pip with the actual name of the kernel you want to delete.
+        jupyter-kernelspec uninstall hotw-anaconda3-bin-pip     #[Command]
+        
+        ## Confirm Removal:
+        Confirm the removal when prompted.
+
+
+## Before Creating Jupyter notebook Kernel
+        (hotw2) [ec2-user@ip-172-16-32-113 ~]$ which pip
+        ~/anaconda3/envs/hotw2/bin/pip
+        
+        Activate Virtual Environment:
+        Before launching Jupyter Notebook, make sure that your virtual environment is activated. You can activate it using:
+        
+        bash
+        Copy code
+        source ~/anaconda3/bin/activate hotw2  # Unix-like
+        
+        Install Jupyter in the Virtual Environment:
+        Ensure that Jupyter is installed within your virtual environment. If it's not installed, you can install it using:
+        
+        bash
+        Copy code
+        pip install jupyter
+        Install Jupyter Kernel:
+        Make sure that the Jupyter kernel is installed within the hotw2 environment. You can install it using:
+        
+        bash
+        Copy code
+        ~/anaconda3/envs/hotw2/bin/python -m ipykernel install --user --name=hotw2
+        OR
+        python -m ipykernel install --user --name=sbert-fix
+
+        Replace hotw2 with the desired kernel name.
+
+
+
+## Try this if not able to install any package like transformers==3.1.0
+## https://stackoverflow.com/questions/53204916/what-is-the-meaning-of-failed-building-wheel-for-x-in-pip-install
+python3 -m venv env/python
+source env/python/bin/activate
+pip3 install pip --upgrade
